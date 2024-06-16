@@ -55,11 +55,13 @@ const contactRouter = require("./routes/contact.routes");
 const postRoutes = require("./routes/postRoutes");
 const imageRoutes = require('./routes/imageRoutes');
 const resetRouter = require('./routes/reset.routes');
+const commentRouter= require('./routes/comment.routes')
 
 app.use("/", contactRouter); // Mount the contact router on the /api/contacts route
 app.use('/', postRoutes);
 app.use('/api', imageRoutes);
 app.use('/', resetRouter);
+app.use('/', commentRouter);
 
 // Import the authentication and user routes (replace with actual paths)
 try {

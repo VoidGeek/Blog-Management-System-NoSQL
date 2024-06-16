@@ -4,7 +4,7 @@ const Post = require("../models/post.model");
 // Create a new post
 exports.createPost = async (req, res) => {
   try {
-    const { caption, post_image } = req.body;
+    const { caption, post_image,description } = req.body;
 
     if (!req.userId) {
       return res.status(401).json({ message: "User is not authenticated." });
@@ -17,6 +17,7 @@ exports.createPost = async (req, res) => {
     const post = new Post({
       caption,
       post_image,
+      description,
       adminUser: adminUserId,
        // Associate images with the post by passing an array of image IDs or the image URL
     });

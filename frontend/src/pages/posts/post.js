@@ -11,6 +11,7 @@ const currentUser = AuthService.getCurrentUser();
 function AddPost() {
   const [post, setPost] = useState({
     caption: '',
+    description:'',
     post_image: '',
   });
 
@@ -160,6 +161,20 @@ function AddPost() {
                 id="caption"
                 name="caption"
                 value={post.caption}
+                onChange={handleInputChange}
+                className="block w-full px-3 py-2 border-b-2 border-gray-300 focus:border-blue-500 focus:outline-none bg-transparent bg-opacity-70 backdrop-blur-100"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+                Description:
+              </label>
+              <input
+                type="text"
+                id="description"
+                name="description"
+                value={post.description}
                 onChange={handleInputChange}
                 className="block w-full px-3 py-2 border-b-2 border-gray-300 focus:border-blue-500 focus:outline-none bg-transparent bg-opacity-70 backdrop-blur-100"
                 required

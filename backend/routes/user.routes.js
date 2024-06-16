@@ -16,7 +16,6 @@ module.exports = function(app) {
   );
   app.get(
     "/api/users/:id",
-    [authJwt.verifyToken,authJwt.isModerator],
     controller.getUserById
   );
   app.get(

@@ -12,6 +12,7 @@ function EditPost() {
   const [selectedImageKey, setSelectedImageKey] = useState(null);
   const [post, setPost] = useState({
     caption: '',
+    description:'',
     post_image: '',
   });
   const [images, setImages] = useState([]);
@@ -186,6 +187,20 @@ function EditPost() {
                   id="caption"
                   name="caption"
                   value={post.caption}
+                  onChange={handleInputChange}
+                  required
+                  className="block w-full px-3 py-2 border-b-2 border-gray-300 focus:border-blue-500 focus:outline-none bg-transparent bg-opacity-70 backdrop-blur-100"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+                  Post Description:
+                </label>
+                <input
+                  type="text"
+                  id="description"
+                  name="description"
+                  value={post.description}
                   onChange={handleInputChange}
                   required
                   className="block w-full px-3 py-2 border-b-2 border-gray-300 focus:border-blue-500 focus:outline-none bg-transparent bg-opacity-70 backdrop-blur-100"

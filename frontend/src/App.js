@@ -21,6 +21,7 @@ import UserList from "./pages/userList";
 import AddPost from "./pages/posts/post";
 import EditPost from "./pages/posts/EditPost";
 import FeedList from "./components/FeedList";
+import FeedView from "./components/FeedView";
 import ResetPass from "./common/ResetPass";
 
 const App = () => {
@@ -79,6 +80,7 @@ const App = () => {
           <Route exact path="/admin/posts" element={<AddPost />} />
           <Route exact path="/admin/feeds/:id/edit" element={<EditPost />} />
           <Route exact path="/home/feeds" element={<FeedList />} />
+          <Route exact path="/home/feeds/:postId" element={<FeedView />} />
           <Route exact path="/login/reset" element={<ResetPass />} />
         </Routes>
       </div>
